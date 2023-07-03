@@ -8,16 +8,24 @@
 import { defineComponent } from 'vue';
 import AppTodoItem from './AppTodoItem.vue';
 
+interface State {
+  todos: {
+    id: number,
+    text: string,
+    completed: boolean,
+  }[]
+}
+
 export default defineComponent({
   components: {
     AppTodoItem,
   },
-  data () {
+  data (): State {
     return {
       todos: [
       {id: 0, text: 'Learn the basics of Vue', completed: true},
       {id: 1, text: 'Learn the basics of Typescript', completed: false},
-      {id: 2, text: 'Subscribe to the channel', completed: false}
+      {id: 2, text: 'Subscribe to the channel', completed: false},
       ]
     }
   }
